@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- admin interface -->
+<div class="container">
+  <div class="page_title">
+    <h2>Member and Event Management System</h2>
+  </div>
+  <div class="page_title">
+    <p>Admin Access</p>
+  </div>
+    
+  </div>
+ 
+  <div class="list_container">
+    <ul class="list-group">
+      <li class="list-group-item disabled" aria-disabled="true" style="font-size: 20px;font-weight: bold; text-align: center;">Member Management</li>
+      <li class="list-group-item"><a href="{{url_for ('search')}}">Search Members</a></li>
+      <li class="list-group-item"><a href="{{url_for ('add')}}">Add New Members</a></li>
+      <li class="list-group-item"><a href="{{url_for ('edit', member_id=member_id)}}">Edit Existing Members</a></li>
+    </ul>
+  </div>
+
+  <div class="list_container">
+    <ul class="list-group">
+      <li class="list-group-item disabled" aria-disabled="true" style="font-size: 20px; font-weight: bold; text-align: center;">Event Management</li>
+      <li class="list-group-item"><a href="{{url_for ('search')}}">Search Events</a></li>
+      <li class="list-group-item"><a href="{{url_for ('add_event')}}">Add New Events</a></li>
+      <li class="list-group-item"><a href="{{url_for ('add_stage')}}">Add New Event Stages</a></li>
+      <li class="list-group-item"><a href="{{url_for ('add_scores')}}">Add Scores and Positions</a></li>
+      <li class="list-group-item"><a href="{{url_for ('get_team_members_report')}}">Team Members Report</a></li>
+      <li class="list-group-item"><a href="{{url_for ('get_medal_report')}}">Medal Report</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+
+</div>
+ 
+
+
+{% endblock %}

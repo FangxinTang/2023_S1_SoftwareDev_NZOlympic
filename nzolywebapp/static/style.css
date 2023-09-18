@@ -1,0 +1,110 @@
+
+* {
+    background-color: F5F5DC;
+    margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+    color: dimgrey;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 h2 h3 {
+    font-style: bold;
+}
+
+#carouselExample {
+    display: block;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-4 {
+    margin-top: 10px;
+}
+
+.title {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title img {
+    margin-right: 10px;
+}
+
+.page_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.list_container {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 30px;
+}
+
+#member_to_be_edit_table {
+    display: block;
+    width: 400px;
+    margin-left: 100px;
+    margin-right:auto;
+    margin-top: 30px;
+}
+
+.form_container {
+    display: block;
+    margin-left: 100px;
+    margin-right:100px;
+    margin-top: 30px;
+}
+
+.search_form_container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.table_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.note{
+    margin-left: 50px;
+}
+
+
+.table_container {
+   margin-left: 50px;
+   margin-right: 50px;
+}
+
+
+
+.table thead th {
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-bottom-width: 1px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.table td {
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+
+.member_to_be_edit_container {
+    margin-left:50px;
+    margin-right:50px;
+}

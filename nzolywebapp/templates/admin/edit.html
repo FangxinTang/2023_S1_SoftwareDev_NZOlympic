@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- admin interface -->
+
+<!--admin_edit pass member_id, all_member_details, teams -->
+
+<div id="member_to_be_edit_table">
+  <ul class="list-group">
+    <li class="list-group-item disabled" aria-disabled="true">You are editing:</li>
+    <li class="list-group-item">Member id : {{ member_id }}</li>
+    <li class="list-group-item">Name : {{name}}</li>
+  </ul>
+</div>
+
+
+<div class="form_container">
+  <form action="/admin/editmemberresult/{{member_id}}" method="POST">
+    <input type="hidden" name="member_id" value="{{ member_id }}">
+    <div class="form-control">
+
+      <div class="col-4">
+        <label for="edit_member">First Name</label>
+        <input name="first_name" type="text" class="form-control" placeholder="First name" required>
+      </div>
+
+      <div class="col-4">
+        <label for="edit_member">Last Name</label>
+        <input name="last_name" type="text" class="form-control" placeholder="Last name" required>
+      </div>
+
+      <div class="col-4">
+        <label for="edit_member">City</label>
+        <input name="city" type="text" class="form-control" placeholder="City" required>
+      </div>
+
+      <div class="col-4">
+        <label for="edit_member">Birthdate</label>
+        <input name="birthdate" type="date" class="form-control" placeholder="dd/mm/yyyy" required>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group">
+        <label for="edit_member">Team Name</label>
+        <select name="team_id" required>
+            <option value="101">Snowboard</option>
+            <option value="102">Alpine Skiing</option>
+            <option value="103">Freestyle Skiing</option>
+            <option value="123">Biathlon</option>
+            <option value="125">Speed Skating</option>
+        </select>
+      </div>        
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button> 
+</form>
+</div>
+
+{% endblock %}

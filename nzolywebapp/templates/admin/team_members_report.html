@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="page_title">
+  <h2>Team Members Report</h2>
+</div>
+
+<!-- {{team_members}} -->
+
+<div class="container">
+    <table id="get_team_members_report" class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Team Name</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in team_members %}
+            <tr>
+                {% for entry in row %}
+                <td>{{ entry }}</td>
+                {% endfor %}
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

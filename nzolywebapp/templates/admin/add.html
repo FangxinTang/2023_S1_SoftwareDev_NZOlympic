@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- add new member-->
+
+<div class="page_title">
+  <h2>Add New Members</h2>
+</div>
+
+<div class="form_container">
+  <form action="/admin/showaddmember" method="POST">
+    <div class="form-row">
+      <div class="col-4">
+        <input name="first_name" type="text" class="form-control" placeholder="First name" required>
+      </div>
+
+      <div class="col-4">
+        <input name="last_name" type="text" class="form-control" placeholder="Last name" required>
+      </div>
+
+      <div class="col-4">
+        <input name="city" type="text" class="form-control" placeholder="City" required>
+      </div>
+
+      <div class="col-6">
+        <label for="birthdate">Birthdate</label>
+        <input name="birthdate" type="date" class="form-control" placeholder="dd/mm/yyyy" required>
+      </div>
+
+      <div class="col-6">
+        <div class="form-group">
+        <label for="">Team Name</label>
+        <select name="team_id">
+          {% for team in teams %}
+          <option value="{{ team[0] }}">{{ team[1] }}</option>
+          {% endfor %}
+        </select>
+      </div>        
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button> 
+</form>
+</div>
+
+{% endblock %}

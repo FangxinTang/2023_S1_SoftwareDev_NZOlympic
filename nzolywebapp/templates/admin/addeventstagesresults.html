@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- received updated event_stage table and user input -->
+<!-- show add event stages result in the following table -->
+
+<!-- {{event_stages}} -->
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Stage ID</th>
+                <th>Stage Name</th>
+                <th>Event ID</th>
+                <th>Location</th>
+                <th>Stage Date</th>
+                <th>Qualifying</th>
+                <th>Points To Qualify</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in event_stages %}
+            <tr>
+                {% for entry in row %}
+                <td>{{ entry }}</td>
+                {% endfor %}
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

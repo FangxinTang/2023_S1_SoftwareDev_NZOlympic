@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- admin request search data from database -->
+<!-- provide two options -->
+
+<div class="container">
+
+    <div class="page_title">
+        <h2>Search Members or Events</h2>
+    </div>
+
+    <div class="search_form_container">
+        <form action="/admin/searchresults" method="POST">
+            <input type="text" name="adminsearch" placeholder="Member/Event Name">
+            <input type="submit" name="member_search" value="Search Members">
+            <input type="submit" name="event_search" value="Search Events">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

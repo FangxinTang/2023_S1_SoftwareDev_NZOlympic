@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- code in here to display a list of books-->
+
+<div class="container">
+    <div class="page_title">
+        <h2>Team Members</h2>     
+    </div>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Member ID</th>
+                    <th>Team Name</th>
+                    <th>Member Name</th>
+                    <th>City</th>
+                    <th>Birthdate</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                {% for member in memberlist %}
+                <tr>
+                {% for entry in member %}
+                    {% if loop.index == 3 %}
+                        <td>
+                            <a href="{{ url_for('athlete_interface', member_name=entry) }}">{{ entry }}</a></td>
+                    {% else %}
+                        <td>{{ entry }}</td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page_title">
+  <h2>Medal Report</h2>
+</div>
+
+<div class="page_title">
+    <h6>Total Medal Numbers by Medal Class</h6>
+</div>
+  
+  <div class="table_container">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Gold</th>
+                  <th>Silver</th>
+                  <th>Bronze</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>{{ num_gold }}</td>
+                  <td>{{ num_silver }}</td>
+                  <td>{{ num_bronze }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  
+
+  <div class="page_title">
+    <h6>Winners</h6>
+  </div>
+
+<!-- {{data}} -->
+    <div class="table_container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Member ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Medal Class</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    {% for entry in row %}
+                    <td>{{ entry }}</td>
+                    {% endfor %}
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+ 
+  
+</div>
+
+
+{% endblock %}

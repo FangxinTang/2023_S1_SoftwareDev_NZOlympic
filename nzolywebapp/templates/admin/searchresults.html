@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- data received member_search_results, event_search_results -->
+<!-- user input kw -> app.py get data -> display here-->
+<div search_result_container>
+    <h2 class="page_title">Search Results</h2>
+    <p class="note"> * Click Member ID to Edit</p> 
+    <div class="table_container">
+        <table class="table table-striped"> 
+            <thead>
+                <tr><em>Member Search Result</em> 
+                    <th>Member ID</th>
+                    <th>Team ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>Birthdate</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for search in member_search_results %}
+                <tr>
+                    {% for entry in search %}
+                        {% if loop.index0 == 0 %}
+                        {% set member_id = entry %}
+                        <td><a href="{{ url_for('edit', member_id=member_id) }}">{{ entry }}</a></td>
+                        {% else %}
+                            <td>{{ entry }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+
+    <div class="table_container">
+    <table class="table table-striped">
+        <thead>
+            <tr><em>Event Search Result</em> 
+                <th>Event ID</th>
+                <th>Event Name</th>
+                <th>Sport</th>
+                <th>Team ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for search in event_search_results %}
+            <tr>
+                {% for entry in search %}
+                    <td>{{ entry }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>   
+    </div>
+
+</div>
+
+
+
+{% endblock %}

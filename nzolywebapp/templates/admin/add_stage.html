@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!-- received data : events, use this table.event_name to identify event_id-->
+<!-- get the user input and data receive, post to "admin/addeventstagesresult" -->
+
+<div class="page_title">
+  <h2>Add New Event Stages</h2>
+</div>
+
+<div class="form_container">
+  <form action="/admin/addeventstagesresults" method="POST">
+
+    <div class="form-group">
+      <label for="stage_name">Stage Name :</label>
+      <select name="stage_name" id="stage_name" class="form-control" required>
+        <option value="Qualification">Qualification</option>
+        <option value="Heat 1">Heat 1</option>
+        <option value="Final">Final</option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="event_id">Event Name :</label>
+      <select name="event_id" id="event_id" class="form-control" required>
+        {% for row in events %}
+        <option value="{{ row[0] }}">{{ row[1] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="location">Location : </label>
+      <input type="text" name="location" id="location" class="form-control" placeholder="Location" required>
+    </div>
+    <div class="form-group">
+      <label for="stage_date">Stage Date : </label>
+      <input name="stage_date" type="date" class="form-control" placeholder="dd/mm/yyyy">
+    </div>
+    <div class="form-group">
+      <p>Qualifying Status:</p>
+        <input type="radio" id="qualifying" name="qualifying" value="1">
+        <label for="qualifying">Qualifying</label>
+        <input type="radio" id="not_qualifying" name="qualifying" value="0">
+        <label for="qualifying">Not qualifying</label><br>
+    </div>
+    <div class="form-group">
+      <label for="points_to_qualify">Points to qualify : </label>
+      <input type="text" name="points_to_qualify" id="points_to_qualify" class="form-control" placeholder="Points to qualify" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
